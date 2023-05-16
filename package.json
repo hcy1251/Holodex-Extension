@@ -5,9 +5,14 @@
   "description": "Search live streams, archives, clips and channels in Holodex.",
   "icon": "holodex.png",
   "author": "uetchy",
+  "owner": "hcy",
+  "contributors": [
+    "hcy1251"
+  ],
   "categories": [
     "Web"
   ],
+  "access": "private",
   "license": "MIT",
   "commands": [
     {
@@ -41,20 +46,14 @@
   ],
   "preferences": [
     {
+      "description": "Your Holodex API key (holodex.net > Account Settings > API Key)",
       "name": "apiKey",
-      "type": "password",
+      "placeholder": "Holodex API Key",
       "required": true,
       "title": "API Key",
-      "description": "Your Holodex API key (holodex.net > Account Settings > API Key)",
-      "placeholder": "Holodex API Key"
+      "type": "password"
     },
     {
-      "name": "org",
-      "type": "dropdown",
-      "required": true,
-      "title": "Default Organization",
-      "description": "Default organization to use",
-      "default": "All Vtubers",
       "data": [
         {
           "title": "All Vtubers",
@@ -184,24 +183,24 @@
           "title": "V Dimension.Creators",
           "value": "V Dimension.Creators"
         }
-      ]
+      ],
+      "default": "All Vtubers",
+      "description": "Default organization to use",
+      "name": "org",
+      "required": true,
+      "title": "Default Organization",
+      "type": "dropdown"
     },
     {
-      "name": "language",
-      "type": "textfield",
-      "title": "Video Language",
+      "default": "en",
       "description": "Choose clip langauge from {en, ja, es, zh, id, ru, ko}, separated by comma",
+      "name": "language",
       "placeholder": "en,ja",
       "required": true,
-      "default": "en"
+      "title": "Video Language",
+      "type": "textfield"
     },
     {
-      "name": "externalVideoPlayer",
-      "type": "dropdown",
-      "title": "External Video Player",
-      "description": "Add this app to action menu",
-      "required": false,
-      "default": "",
       "data": [
         {
           "title": "None",
@@ -219,25 +218,31 @@
           "title": "VLC",
           "value": "VLC"
         }
-      ]
+      ],
+      "default": "",
+      "description": "Add this app to action menu",
+      "name": "externalVideoPlayer",
+      "required": false,
+      "title": "External Video Player",
+      "type": "dropdown"
     },
     {
-      "name": "preferEnglishName",
-      "type": "checkbox",
-      "title": "Prefer English Name",
-      "label": "Show channel name in English",
+      "default": true,
       "description": "Prefer English channel name over the original name",
+      "label": "Show channel name in English",
+      "name": "preferEnglishName",
       "required": false,
-      "default": true
+      "title": "Prefer English Name",
+      "type": "checkbox"
     },
     {
-      "name": "preferYouTube",
-      "type": "checkbox",
-      "title": "Prefer YouTube",
-      "label": "Set YouTube as a primary link opener",
+      "default": false,
       "description": "Prefer YouTube over Holodex as a link opener",
+      "label": "Set YouTube as a primary link opener",
+      "name": "preferYouTube",
       "required": false,
-      "default": false
+      "title": "Prefer YouTube",
+      "type": "checkbox"
     }
   ],
   "dependencies": {
